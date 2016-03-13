@@ -35,7 +35,7 @@ public class IndexServlet extends HttpServlet implements Servlet
 
 
 
-        String fileName = "webapps\\project\\Index.htm";
+        String fileName = "webapps\\stp_project\\pages\\Index.htm";
 
         BufferedReader br = new BufferedReader(new FileReader(fileName));
         String htmString="";
@@ -46,8 +46,8 @@ public class IndexServlet extends HttpServlet implements Servlet
         }
 
         response.setContentType("text/html;charset=UTF-8");
-        String secondString = new String(htmString.getBytes("windows-1251"),"UTF-8");
-        response.getWriter().print(secondString);
+        //String secondString = new String(htmString.getBytes("windows-1251"),"UTF-8");
+        response.getWriter().print(htmString);
 
         logger.info("User was connected!");
         logger.info("IP adress is: " + request.getRemoteAddr());
